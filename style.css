@@ -1,19 +1,23 @@
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: monospace;
-
-        }
-html {
-    zoom: 100%;
+* {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
-    body{
 
-        background-color: var(--primary-color);
-        font-size: 3.5rem;
-    }
+html,
+body {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    /* Verhindert jegliches Scrollen */
+    font-size: 16px;
+    /* Setzt die Schriftgröße zurück */
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
 
 :root {
     --primary-color: #ffffff;
