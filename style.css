@@ -3,10 +3,13 @@
             padding: 0;
             box-sizing: border-box;
             font-family: monospace;
+            zoom: 20%;
 
         }
 
     body{
+        height: 100vh;
+        width: 100vw;
 
         background-color: var(--primary-color);
         font-size: 3.5rem;
