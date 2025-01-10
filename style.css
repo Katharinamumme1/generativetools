@@ -1,0 +1,146 @@
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: monospace;
+
+        }
+    body{
+        background-color: var(--primary-color);
+        font-size: 3.5rem;
+    }
+
+:root {
+    --primary-color: #ffffff;
+    /* Standard: Schwarz */
+    --secondary-color: #000000;
+    /* Standard: Weiß */
+}
+
+
+                .banner {
+
+                    width: 100vw;
+                    height: 200px;
+                    border: var(--secondary-color) solid 2px;
+        font-size: 3.5rem;
+        
+                    padding-top: 10px;
+                    padding-bottom: 5px;
+                    padding-left: 20px;
+                    text-transform: uppercase;
+                    position: relative;
+                    color: var(--secondary-color);
+        
+                }
+        
+                #header {
+        
+                    overflow: hidden;
+                }
+        
+        
+                .marquee {
+        
+                    display: inline-block;
+                    white-space: nowrap;
+                    animation: scrollText 10s linear infinite;
+                }
+        
+                .marquee span {
+                    display: inline-block;
+                    padding-left: 100%;
+                }
+        
+        
+                @keyframes scrollText {
+                    0% {
+                        transform: translateX(100%);
+                    }
+        
+                    100% {
+                        transform: translateX(-100%);
+                    }
+                }
+
+        #main-settings{
+            height: 160px;
+
+
+        }
+
+main{  
+    margin-top: 100px;
+    width: 100vw;
+    height: 90vh;
+                display: flex;
+                    flex-direction: row;
+}
+
+
+
+        nav {
+
+            width: 400px;
+            height: 100%;
+            padding: 10px;
+            border-right: 3px solid var(--secondary-color);
+            border-top: var(--secondary-color) solid 3px;
+        }
+
+        nav ul {
+            list-style: none;
+            text-transform: uppercase;
+        }
+
+        nav ul li {
+            margin-bottom: 10px;
+        }
+
+        nav ul li a {
+
+            text-decoration: none;
+            border: solid var(--secondary-color);
+            display: block;
+            padding: 5px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        nav ul li a:hover {
+            background-color: #ddd;
+        }
+
+
+        .sidebar {
+            width: 600px;
+            padding: 15px;
+            border-top: var(--secondary-color) solid 3px;
+            border-right: 3px solid #000000;
+        }
+
+        .workspace {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-right:var(--secondary-color) solid 3px;
+            border-top: var(--secondary-color) solid 3px;
+            padding: 20px;
+        }
+
+        .workspace div {
+            width: 100%;
+            height: 100%;
+            display: none;
+            /* Versteckt standardmäßig alle Arbeitsbereiche */
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .workspace div.active {
+            display: flex;
+            /* Zeigt nur den aktiven Arbeitsbereich an */
+        }

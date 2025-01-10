@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arbeitsbereich</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div id="header" class="banner">
+    <div class="marquee" class="banner">
+        <span>Generative Fonts - Create Your Unique Typeface!</span>
+    </div>
+</div>
+<div id="main-settings" class="banner">
+    <div id="color-settings">
+        <label for="primary-color"></label>
+        <input class="colorPicker" type="color" id="primary-color" value="#ffffff">
+        <label for="secondary-color"></label>
+        <input class="colorPicker" type="color" id="secondary-color" value="#000000">
+        <button id="swap-colors">swap</button>
+    </div>
+<main>
+        <nav>
+            <ul>
+                <li><a id="nav1">generate Fonts</a></li>
+                <li><a id="nav2">Effekt 2</a></li>
+                <li><a id="nav3">Effekt 3</a></li>
+            </ul>
+        </nav>
+        
+        <div class="sidebar" id="sidebar">
+            <h3>Steuerelemente</h3>
+            <p>Wähle einen Effekt aus der Navigation, um Details anzuzeigen.</p>
+        </div>
+        
+        <div class="workspace">
+            <div id="workspace1">
+                <section id="fontSection">
+                    <div id="alphabetContainer"></div>
+                </section>
+                <div id="workspace2">Arbeitsbereich für Effekt 2</div>
+                <div id="workspace3">Arbeitsbereich für Effekt 3</div>
+            </div>
+</main>
+
+
+    <script>
+        // Referenzen zu Sidebar und Arbeitsbereichen
+        const sidebar = document.getElementById("sidebar");
+        const workspaces = document.querySelectorAll(".workspace div");
+
+        // Inhalte für die Navigationselemente
+        const navContent = {
+            nav1: "<h3>Effekt 1</h3><p>Dies ist die Beschreibung für Effekt 1. Hier können weitere Optionen hinzugefügt werden.</p>",
+            nav2: "<h3>Effekt 2</h3><p>Dies ist die Beschreibung für Effekt 2. Passe Parameter hier an.</p>",
+            nav3: "<h3>Effekt 3</h3><p>Dies ist die Beschreibung für Effekt 3. Experimentiere mit verschiedenen Einstellungen.</p>",
+        };
+
+        // Funktion zum Aktualisieren der Sidebar und des Arbeitsbereichs
+        function updateContent(navId) {
+            // Aktualisiere die Sidebar
+            sidebar.innerHTML = navContent[navId];
+
+            // Blende alle Arbeitsbereiche aus
+            workspaces.forEach(ws => ws.classList.remove("active"));
+
+            // Zeige nur den passenden Arbeitsbereich
+            document.getElementById(`workspace${navId.slice(-1)}`).classList.add("active");
+        }
+
+        // Event Listener für die Navigationselemente
+        document.querySelectorAll("nav ul li a").forEach(navItem => {
+            navItem.addEventListener("click", () => {
+                updateContent(navItem.id);
+            });
+        });
+    </script>
+</body>
+<script src="color-settings.js"></script>
+</html>
