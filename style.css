@@ -1,12 +1,16 @@
         * {
             margin: 0;
             padding: 0;
-    zoom: 0%;
             box-sizing: border-box;
             font-family: monospace;
 
         }
+html {
+    zoom: 100%;
+    box-sizing: border-box;
+}
     body{
+
         background-color: var(--primary-color);
         font-size: 3.5rem;
     }
